@@ -1,3 +1,4 @@
+
 node {
     def app
 
@@ -32,5 +33,10 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
+        
+    }
+   stage('Running as container')
+    { 
+        sh 'docker run -itd -P iqram007/newdocke'
     }
 }
